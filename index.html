@@ -13,6 +13,7 @@
       <button id="doubleClick">Double click</button>
       <button id="keyDown">Key down [G]</button>
       <button id="longPress">Long press</button>
+      <span id="accelerationCords"></span>
       <button id="requestDeviceMotion" class="device-motion">
         Device motion
 
@@ -30,6 +31,7 @@
     const doubleClick = document.getElementById('doubleClick');
     const keyDown = document.getElementById('keyDown');
     const longPress = document.getElementById('longPress');
+    const accelerationCords = document.getElementById('accelerationCords');
 
     onClick.addEventListener("click", function(){
         onClick.classList.toggle('green');
@@ -59,7 +61,7 @@
                     if ( response == "granted" ) {
                         window.addEventListener( "devicemotion", (e) => {
                             let d = e.accelerationIncludingGravity.x + ' m/s2';
-                            doubleClick.innerHTML = d;
+                            accelerationCords.innerHTML = d;
                         })
                     }
                 })
