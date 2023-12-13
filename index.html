@@ -36,7 +36,6 @@
     const keyDown = document.getElementById('keyDown');
     const longPress = document.getElementById('longPress');
     const accelerationCords = document.getElementById('accelerationCords');
-    const delayInMilliseconds = 1000; //1 second
 
     onClick.addEventListener("click", function(){
         onClick.classList.toggle('green');
@@ -65,11 +64,9 @@
                     // (optional) Do something after API prompt dismissed.
                     if ( response == "granted" ) {
                         window.addEventListener( "devicemotion", (e) => {
-                            setTimeout(function() {
-                                const x = e.rotationRate.beta.toFixed(1) + ' X';
-                                const y = e.rotationRate.alpha.toFixed(1) + ' Y';
-                                accelerationCords.innerHTML = x + " " + y;
-                            }, delayInMilliseconds);
+                            const x = e.rotationRate.beta.toFixed(1) + ' X';
+                            const y = e.rotationRate.alpha.toFixed(1) + ' Y';
+                            accelerationCords.innerHTML = x + " " + y;
                         })
                     }
                 })
