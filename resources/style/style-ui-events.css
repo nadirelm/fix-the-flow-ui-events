@@ -11,6 +11,9 @@
     --border: #e3e3e3;
     --grey: #7e7e7e;
 }
+#accelerationCords{
+    font-size: 30px;
+}
 button{
     background-color: var(--bg);
 }
