@@ -58,7 +58,7 @@
                     // (optional) Do something after API prompt dismissed.
                     if ( response == "granted" ) {
                         window.addEventListener( "devicemotion", (e) => {
-                            let d = `${e.acceleration.x} m/s2`;
+                            let d = e.acceleration.x + ' m/s2';
                             doubleClick.innerHTML = d;
                         })
                     }
