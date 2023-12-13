@@ -5,10 +5,6 @@
     font-family: 'Lato', sans-serif;
     transition: all 100ms ease-in-out;
 }
-#accelerationCords{
-    position: absolute;
-    top: 0;
-}
 :root{
     --bg: #ffffff;
     --green: #97d078;
