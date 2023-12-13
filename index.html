@@ -50,16 +50,14 @@
         }
     })
 
-
+    // check of pagina https is
     if ( location.protocol != "https:" ) {
         location.href = "https:" + window.location.href.substring( window.location.protocol.length );
     }
     function permission () {
         if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
-            // (optional) Do something before API request prompt.
             DeviceMotionEvent.requestPermission()
                 .then( response => {
-                    // (optional) Do something after API prompt dismissed.
                     if ( response == "granted" ) {
                         window.addEventListener( "devicemotion", (e) => {
                             const x = e.rotationRate.beta.toFixed(1) + ' X';
