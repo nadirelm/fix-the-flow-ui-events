@@ -63,8 +63,8 @@
                     // (optional) Do something after API prompt dismissed.
                     if ( response == "granted" ) {
                         window.addEventListener( "devicemotion", (e) => {
-                            const x = e.rotationRate.beta + ' X';
-                            const y = e.rotationRate.alpha + ' Y';
+                            const x = e.rotationRate.beta.toFixed(1) + ' X';
+                            const y = e.rotationRate.alpha.toFixed(1) + ' Y';
                             accelerationCords.innerHTML = x + " " + y;
                         })
                     }
