@@ -59,6 +59,8 @@
             DeviceMotionEvent.requestPermission()
                 .then( response => {
                     if ( response == "granted" ) {
+
+                        // Weergeven in op site
                         window.addEventListener( "devicemotion", (e) => {
                             const x = e.rotationRate.beta.toFixed(1) + ' X';
                             const y = e.rotationRate.alpha.toFixed(1) + ' Y';
@@ -68,9 +70,11 @@
                 })
                 .catch( console.error )
         } else {
+            // Fout melding
             alert( "Jouw apparaat ondersteund deze functie niet." );
         }
     }
+    // Toestemming vragen aan toestel voor gebruik sensoren.
     const btn = document.getElementById( "requestDeviceMotion" );
     btn.addEventListener( "click", permission );
 </script>
